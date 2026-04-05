@@ -2,7 +2,7 @@
   font-family: 'JetBrains Mono', 'Courier New', monospace;
   font-size: 2rem;
   font-weight: 600;
-  color: #01696f; /* swap for your brand color */
+  color: var(--accent);
 }
 
 .cursor {

@@ -1,7 +1,8 @@
 .about {
   padding: 80px 10%;
-  background-color: #020617;
-  color: white;
+  background-color: var(--section-bg);
+  color: var(--text-h);
+  transition: background-color 0.25s ease, color 0.25s ease;
 }
 
 .about-container {
@@ -13,7 +14,7 @@
 .about-image img {
   width: 300px;
   border-radius: 20px;
-  border: 3px solid #38bdf8;
+  border: 3px solid var(--accent);
 }
 
 .about-content {
@@ -23,13 +24,13 @@
 .about-content h2 {
   font-size: 2.2rem;
   margin-bottom: 20px;
-  color: #38bdf8;
+  color: var(--accent);
 }
 
 .about-content p {
   margin-bottom: 15px;
   line-height: 1.6;
-  color: #cbd5f5;
+  color: var(--muted-text);
 }
 
 .about-info {
@@ -43,8 +44,8 @@
 .btn {
   display: inline-block;
   padding: 10px 20px;
-  background-color: #38bdf8;
-  color: black;
+  background-color: var(--accent);
+  color: var(--button-text);
   border-radius: 8px;
   text-decoration: none;
   font-weight: 500;
@@ -52,7 +53,7 @@
 }
 
 .btn:hover {
-  background-color: #0ea5e9;
+  filter: brightness(0.95);
 }
 
 /* 🔥 Responsive */

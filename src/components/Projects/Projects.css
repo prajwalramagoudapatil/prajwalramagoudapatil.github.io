@@ -1,8 +1,9 @@
 .projects {
   padding: 60px 10%;
-  background-color: #0f172a;
-  color: white;
+  background-color: var(--section-bg);
+  color: var(--text-h);
   text-align: center;
+  transition: background-color 0.25s ease, color 0.25s ease;
 }
 
 .projects h2 {
@@ -17,10 +18,11 @@
 }
 
 .project-card {
-  background: #1e293b;
+  background: var(--card-bg);
   padding: 20px;
   border-radius: 12px;
   transition: transform 0.3s ease;
+  box-shadow: var(--shadow);
 }
 
 .project-card:hover {
@@ -42,8 +44,8 @@
 
 .tech-stack span {
   display: inline-block;
-  background: #38bdf8;
-  color: black;
+  background: var(--tag-bg);
+  color: var(--tag-text);
   padding: 5px 10px;
   margin: 4px;
   border-radius: 6px;
@@ -51,7 +53,7 @@
 }
 
 .project-card a {
-  color: #38bdf8;
+  color: var(--accent);
   text-decoration: none;
   font-weight: bold;
 }

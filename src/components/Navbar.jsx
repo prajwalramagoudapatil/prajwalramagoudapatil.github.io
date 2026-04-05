@@ -31,13 +31,16 @@ const styles = {
     fontFamily: "var(--nav-heading)",
     fontSize: "1.6rem",
     fontWeight: 600,
-    // letterSpacing: "0.08em",
-    // textTransform: "uppercase",
   },
   navLinks: {
     display: "flex",
     alignItems: "center",
     gap: "8px",
+  },
+  navActions: {
+    display: "flex",
+    alignItems: "center",
+    gap: "10px",
   },
   link: {
     border: "none",
@@ -47,19 +50,19 @@ const styles = {
     padding: "10px 14px",
     borderRadius: "999px",
     cursor: "pointer",
-    transition: "background-color 0.2s ease, color 0.2s ease, transform 0.2s ease",
+    transition:
+      "background-color 0.2s ease, color 0.2s ease, transform 0.2s ease",
   },
-  cta: {
-    display: "inline-flex",
-    alignItems: "center",
-    justifyContent: "center",
-    textDecoration: "none",
-    borderRadius: "999px",
-    padding: "10px 18px",
+  themeButton: {
+    border: "1px solid var(--border)",
+    background: "var(--surface)",
     color: "var(--text-h)",
-    background: "var(--accent-bg)",
-    border: "1px solid var(--accent-border)",
-    fontWeight: 600,
+    font: "inherit",
+    padding: "10px 14px",
+    borderRadius: "999px",
+    cursor: "pointer",
+    transition:
+      "background-color 0.2s ease, color 0.2s ease, transform 0.2s ease",
     whiteSpace: "nowrap",
   },
   menuButton: {
@@ -101,7 +104,7 @@ const styles = {
   },
 };
 
-function Navbar() {
+function Navbar({ theme, onToggleTheme }) {
   const [isMobile, setIsMobile] = useState(() => window.innerWidth <= 768);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
@@ -135,39 +138,62 @@ function Navbar() {
     setIsMenuOpen(false);
   };
 
+  const themeLabel = theme === "dark" ? "Light Theme" : "Dark Theme";
+
+  const handleMouseEnter = (event) => {
+    event.currentTarget.style.background = "var(--accent-bg)";
+    event.currentTarget.style.color = "var(--text-h)";
+    event.currentTarget.style.transform = "translateY(-1px)";
+  };
+
+  const handleMouseLeave = (event, color = "var(--text)") => {
+    event.currentTarget.style.background = "transparent";
+    event.currentTarget.style.color = color;
+    event.currentTarget.style.transform = "translateY(0)";
+  };
+
   const desktopLinks = (
-    <div style={styles.navLinks}>
-      {navItems.map((item) => (
-        <button
-          key={item.target}
-          type="button"
-          style={styles.link}
-          onClick={() => scrollToSection(item.target)}
-          onMouseEnter={(event) => {
-            event.currentTarget.style.background = "var(--accent-bg)";
-            event.currentTarget.style.color = "var(--text-h)";
-            event.currentTarget.style.transform = "translateY(-1px)";
-          }}
-          onMouseLeave={(event) => {
-            event.currentTarget.style.background = "transparent";
-            event.currentTarget.style.color = "var(--text)";
-            event.currentTarget.style.transform = "translateY(0)";
-          }}
-        >
-          {item.label}
-        </button>
-      ))}
+    <div style={styles.navActions}>
+      <div style={styles.navLinks}>
+        {navItems.map((item) => (
+          <button
+            key={item.target}
+            type="button"
+            style={styles.link}
+            onClick={() => scrollToSection(item.target)}
+            onMouseEnter={handleMouseEnter}
+            onMouseLeave={(event) => handleMouseLeave(event)}
+          >
+            {item.label}
+          </button>
+        ))}
+      </div>
+
+      <button
+        type="button"
+        style={styles.themeButton}
+        onClick={onToggleTheme}
+        aria-label={`Switch to ${theme === "dark" ? "light" : "dark"} theme`}
+        onMouseEnter={handleMouseEnter}
+        onMouseLeave={(event) => handleMouseLeave(event, "var(--text-h)")}
+      >
+        {themeLabel}
+      </button>
     </div>
   );
 
   return (
     <header style={styles.header}>
       <nav style={styles.nav} aria-label="Primary">
-        <a href="#home" style={styles.brand} onClick={(event) => {
-          event.preventDefault();
-          scrollToSection("home");
-        }}>
-         &lt; Prajwal Patil &gt;
+        <a
+          href="#home"
+          style={styles.brand}
+          onClick={(event) => {
+            event.preventDefault();
+            scrollToSection("home");
+          }}
+        >
+          &lt; Prajwal Patil &gt;
         </a>
 
         {isMobile ? (
@@ -177,11 +203,13 @@ function Navbar() {
               style={{ ...styles.menuButton, display: "inline-flex" }}
               aria-expanded={isMenuOpen}
               aria-controls="mobile-navigation"
-              aria-label={isMenuOpen ? "Close navigation menu" : "Open navigation menu"}
+              aria-label={
+                isMenuOpen ? "Close navigation menu" : "Open navigation menu"
+              }
               onClick={() => setIsMenuOpen((open) => !open)}
             >
               <span aria-hidden="true" style={{ fontSize: "20px", lineHeight: 1 }}>
-                {isMenuOpen ? "×" : "☰"}
+                {isMenuOpen ? "X" : "="}
               </span>
             </button>
 
@@ -197,15 +225,22 @@ function Navbar() {
                     {item.label}
                   </button>
                 ))}
-               
+
+                <button
+                  type="button"
+                  style={styles.mobileLink}
+                  onClick={() => {
+                    onToggleTheme();
+                    setIsMenuOpen(false);
+                  }}
+                >
+                  {themeLabel}
+                </button>
               </div>
             )}
           </>
         ) : (
-          <>
-            {desktopLinks}
-          
-          </>
+          desktopLinks
         )}
       </nav>
     </header>

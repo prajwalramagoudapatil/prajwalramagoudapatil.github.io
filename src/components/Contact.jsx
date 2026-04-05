@@ -41,8 +41,8 @@ const Contact = () => {
 const styles = {
   section: {
     padding: "60px 10%",
-    backgroundColor: "#020617",
-    color: "white",
+    backgroundColor: "var(--section-bg)",
+    color: "var(--text-h)",
     textAlign: "center",
   },
   heading: {
@@ -65,23 +65,27 @@ const styles = {
   input: {
     padding: "12px",
     borderRadius: "8px",
-    border: "none",
+    border: "1px solid var(--border)",
     outline: "none",
     fontSize: "1rem",
+    backgroundColor: "var(--surface)",
+    color: "var(--text-h)",
   },
   textarea: {
     padding: "12px",
     borderRadius: "8px",
-    border: "none",
+    border: "1px solid var(--border)",
     outline: "none",
     fontSize: "1rem",
+    backgroundColor: "var(--surface)",
+    color: "var(--text-h)",
   },
   button: {
     padding: "12px",
     borderRadius: "8px",
     border: "none",
-    backgroundColor: "#38bdf8",
-    color: "black",
+    backgroundColor: "var(--accent)",
+    color: "var(--button-text)",
     fontWeight: "bold",
     cursor: "pointer",
   },

@@ -23,19 +23,19 @@ const Hero = () => {
           with scalable and impactful solutions.
         </p>
 
-        <div className="hero-buttons">
+        {/* <div className="hero-buttons">
           <a href="#projects" className="btn primary">
             View Projects
           </a>
           <a
             href="https://github.com/prajwalramagoudapatil"
-            target="_blank"
+            // target="_blank"
             rel="noreferrer"
-            className="btn secondary"
+            className="btn primary"
           >
             GitHub
           </a>
-        </div>
+        </div> */}
       </div>
 
       <div className="hero-image">
