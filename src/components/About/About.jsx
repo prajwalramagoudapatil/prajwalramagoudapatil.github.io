@@ -6,7 +6,7 @@ const About = () => {
       <div className="about-container">
         
         <div className="about-image">
-          <img src="/profile.png" alt="Prajwal Patil" />
+          <img src="/src/assets/developer.png" alt="Prajwal Patil" />
         </div>
 
         <div className="about-content">
@@ -43,7 +43,7 @@ const About = () => {
           </div>
 
           <a
-            href="/resume.pdf"
+            href="/src/assets/resume.pdf"
             download
             className="btn"
           >

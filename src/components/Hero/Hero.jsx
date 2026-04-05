@@ -1,14 +1,21 @@
 import "./Hero.css";
+import Typewriter from "../Typewriter/Typewriter";
+import WaveHello from "../WaveHello/WaveHello";
 
 const Hero = () => {
+  const technologies = [
+    "Flutter Developer",
+    "AI/ML Engineer",
+    "Full Stack Developer"
+  ];
   return (
     <section className="hero" id="home">
       <div className="hero-content">
         <h1>
-          Hi, I'm <span>Prajwal Patil</span>
+         <WaveHello/> <div>  I'm <span>Prajwal Patil</span> </div>
         </h1>
-
-        <h2>AI/ML Engineer | Full Stack Developer</h2>
+        {/* <div id="tech-stack" >   </div> */}
+        <h2> <Typewriter strings={technologies} /> </h2>
 
         <p>
           I build intelligent systems using Machine Learning, Deep Learning,
@@ -33,7 +40,7 @@ const Hero = () => {
 
       <div className="hero-image">
         <img
-          src="/profile.png"
+          src="/src/assets/profile.jpg"
           alt="Prajwal"
         />
       </div>

@@ -21,18 +21,18 @@ const styles = {
     display: "flex",
     alignItems: "center",
     justifyContent: "space-between",
-    gap: "16px",
-    padding: "18px 24px",
+    gap: "12px",
+    padding: "10px 20px",
     position: "relative",
   },
   brand: {
     color: "var(--text-h)",
     textDecoration: "none",
-    fontFamily: "var(--heading)",
-    fontSize: "1rem",
+    fontFamily: "var(--nav-heading)",
+    fontSize: "1.6rem",
     fontWeight: 600,
-    letterSpacing: "0.08em",
-    textTransform: "uppercase",
+    // letterSpacing: "0.08em",
+    // textTransform: "uppercase",
   },
   navLinks: {
     display: "flex",
@@ -167,7 +167,7 @@ function Navbar() {
           event.preventDefault();
           scrollToSection("home");
         }}>
-          Portfolio
+         &lt; Prajwal Patil &gt;
         </a>
 
         {isMobile ? (
@@ -197,24 +197,14 @@ function Navbar() {
                     {item.label}
                   </button>
                 ))}
-                <a href="#contact" style={styles.cta} onClick={(event) => {
-                  event.preventDefault();
-                  scrollToSection("contact");
-                }}>
-                  Let's Talk
-                </a>
+               
               </div>
             )}
           </>
         ) : (
           <>
             {desktopLinks}
-            <a href="#contact" style={styles.cta} onClick={(event) => {
-              event.preventDefault();
-              scrollToSection("contact");
-            }}>
-              Let's Talk
-            </a>
+          
           </>
         )}
       </nav>
