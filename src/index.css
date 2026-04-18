@@ -23,23 +23,23 @@
 :root[data-theme="light"] {
   --text: #465164;
   --text-h: #0f172a;
-  --bg: #fffdf8;
-  --border: #dbe3ef;
-  --code-bg: #f4f3ec;
-  --accent: #0f766e;
-  --accent-bg: rgba(15, 118, 110, 0.12);
-  --accent-border: rgba(15, 118, 110, 0.32);
-  --social-bg: rgba(244, 243, 236, 0.5);
+  --bg: #fff9f0;
+  --border: #ead7bf;
+  --code-bg: #f8efe2;
+  --accent: #d97706;
+  --accent-bg: rgba(217, 119, 6, 0.14);
+  --accent-border: rgba(217, 119, 6, 0.32);
+  --social-bg: rgba(248, 239, 226, 0.56);
   --surface: #ffffff;
-  --surface-alt: #f3f6fb;
-  --hero-start: #dbeafe;
-  --hero-end: #ecfeff;
-  --section-bg: #f8fafc;
+  --surface-alt: #fff2df;
+  --hero-start: #ffe2b8;
+  --hero-end: #fff3dd;
+  --section-bg: #fff7eb;
   --card-bg: #ffffff;
-  --muted-text: #475569;
+  --muted-text: #5f4b32;
   --button-text: #ffffff;
-  --tag-bg: rgba(14, 165, 233, 0.18);
-  --tag-text: #0f172a;
+  --tag-bg: rgba(245, 158, 11, 0.2);
+  --tag-text: #7c2d12;
   --shadow:
     rgba(15, 23, 42, 0.1) 0 10px 15px -3px,
     rgba(15, 23, 42, 0.05) 0 4px 6px -2px;

@@ -1,4 +1,6 @@
 import "./About.css";
+import developerImage from "../../assets/developer.png";
+import resumeFile from "../../assets/resume.pdf";
 
 const About = () => {
   return (
@@ -6,7 +8,7 @@ const About = () => {
       <div className="about-container">
         
         <div className="about-image">
-          <img src="/src/assets/developer.png" alt="Prajwal Patil" />
+          <img src={developerImage} alt="Prajwal Patil" />
         </div>
 
         <div className="about-content">
@@ -43,7 +45,7 @@ const About = () => {
           </div>
 
           <a
-            href="/src/assets/resume.pdf"
+            href={resumeFile}
             download
             className="btn"
           >

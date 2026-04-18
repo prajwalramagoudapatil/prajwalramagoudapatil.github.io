@@ -1,8 +1,9 @@
 import "./Hero.css";
 import Typewriter from "../Typewriter/Typewriter";
 import WaveHello from "../WaveHello/WaveHello";
+import profileImage from "../../assets/profile.jpg";
 
-const Hero = () => {
+const Hero = ({ onVisitTemplePage }) => {
   const technologies = [
     "Flutter Developer",
     "AI/ML Engineer",
@@ -23,10 +24,17 @@ const Hero = () => {
           with scalable and impactful solutions.
         </p>
 
-        {/* <div className="hero-buttons">
+        <div className="hero-buttons">
           <a href="#projects" className="btn primary">
             View Projects
           </a>
+          <button
+            type="button"
+            className="btn secondary"
+            onClick={onVisitTemplePage}
+          >
+            Visit Temple Page
+          </button>
           <a
             href="https://github.com/prajwalramagoudapatil"
             // target="_blank"
@@ -35,12 +43,12 @@ const Hero = () => {
           >
             GitHub
           </a>
-        </div> */}
+        </div>
       </div>
 
       <div className="hero-image">
         <img
-          src="/src/assets/profile.jpg"
+          src={profileImage}
           alt="Prajwal"
         />
       </div>
