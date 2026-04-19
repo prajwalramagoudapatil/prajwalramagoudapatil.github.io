@@ -10,8 +10,22 @@
     <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Major+Mono+Display&family=Orbitron:wght@400..900&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=PT+Mono&family=Rationale&family=Share+Tech+Mono&display=swap" rel="stylesheet">
-    <script type="module" crossorigin src="/assets/index-TmCLry9T.js"></script>
-    <link rel="stylesheet" crossorigin href="/assets/index-qFLsERFN.css">
+    <script>
+      (function () {
+        const redirect = window.location.search.match(/[?&]redirect=([^&]+)/);
+
+        if (!redirect) {
+          return;
+        }
+
+        const decodedPath = decodeURIComponent(redirect[1]);
+        const nextUrl = `${window.location.origin}${decodedPath}${window.location.hash}`;
+
+        window.history.replaceState(null, "", nextUrl);
+      })();
+    </script>
+    <script type="module" crossorigin src="/assets/index-BZQzU-M6.js"></script>
+    <link rel="stylesheet" crossorigin href="/assets/index-CnTqkU1o.css">
   </head>
   <body>
     <div id="root"></div>
