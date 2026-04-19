@@ -1,7 +1,7 @@
 .about {
   display: flex;
   align-items: center;
-  padding: 0 20px;
+  padding: 60px 20px;
   min-height: 90vh;
   /* background-color: var(--section-bg); */
   background: linear-gradient(45deg, var(--bg-even), var(--bg-odd));

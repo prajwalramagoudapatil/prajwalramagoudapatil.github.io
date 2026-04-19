@@ -87,12 +87,12 @@ function App() {
   return (
     <>
       <Navbar theme={theme} onToggleTheme={toggleTheme} />
-      <Hero onVisitTemplePage={() => navigateTo("/skdevasthana")} />
+      <Hero />
       <About />
       <Projects />
       <Certificates />
       <Skills />
-      <Contact />
+      {/* <Contact /> */}
       <Footer />
     </>
   );

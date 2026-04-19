@@ -1,45 +1,104 @@
 import "./Skills.css";
+import {
+  SiPython,
+  SiOpenjdk,
+  SiCplusplus,
+  SiJavascript,
+  SiDart,
+  SiReact,
+  SiHtml5,
+  SiNodedotjs,
+  SiExpress,
+  SiDjango,
+  SiTensorflow,
+  SiKeras,
+  SiScikitlearn,
+  SiPytorch,
+  SiLangchain,
+  SiChromatic,
+  SiMysql,
+  SiFirebase,
+  SiGit,
+  SiDocker,
+  SiGooglecloud,
+  SiOpenai,
+  SiHuggingface,
+  SiOllama
+} from "react-icons/si";
+import { TbApi, TbPrompt, TbVectorBezier2 } from "react-icons/tb";
+import { FaCss3Alt, FaEye } from "react-icons/fa";
+import { LuBrainCircuit, LuCloud, LuCloudCog, LuDatabase } from "react-icons/lu";
 
 const skillsData = [
   {
     category: "Programming Languages",
-    skills: ["Python", "Java", "C++", "JavaScript", "Dart"],
+    skills: [
+      { name: "Python", icon: SiPython },
+      { name: "Java", icon: SiOpenjdk },
+      { name: "C++", icon: SiCplusplus },
+      { name: "JavaScript", icon: SiJavascript },
+      { name: "Dart", icon: SiDart },
+    ],
   },
   {
     category: "Frontend",
-    skills: ["React.js", "HTML", "CSS", "JavaScript"],
+    skills: [
+      { name: "React.js", icon: SiReact },
+      { name: "HTML", icon: SiHtml5 },
+      { name: "CSS", icon: FaCss3Alt },
+      { name: "JavaScript", icon: SiJavascript },
+    ],
   },
   {
     category: "Backend",
-    skills: ["Node.js", "Express.js", "Django", "REST APIs"],
+    skills: [
+      { name: "Node.js", icon: SiNodedotjs },
+      { name: "Express.js", icon: SiExpress },
+      { name: "Django", icon: SiDjango },
+      { name: "REST APIs", icon: TbApi },
+    ],
   },
   {
     category: "AI / ML",
     skills: [
-      "TensorFlow",
-      "Keras",
-      "Scikit-learn",
-      "PyTorch",
-      "Computer Vision",
+      { name: "TensorFlow", icon: SiTensorflow },
+      { name: "Keras", icon: SiKeras },
+      { name: "Scikit-learn", icon: SiScikitlearn },
+      { name: "PyTorch", icon: SiPytorch },
+      { name: "Computer Vision", icon: FaEye },
     ],
   },
   {
     category: "GenAI / LLM",
     skills: [
-      "LangChain",
-      "RAG Pipelines",
-      "ChromaDB",
-      "FAISS",
-      "Prompt Engineering",
+      { name: "LangChain", icon: SiLangchain },
+      { name: "RAG Pipelines", icon: LuBrainCircuit },
+      { name: "ChromaDB", icon: SiChromatic },
+      { name: "Ollama", icon: SiOllama },
+      // { name: "FAISS", icon: TbVectorBezier2 },
+      { name: "Prompt Engineering", icon: TbPrompt },
+      { name: "OpenAI API", icon: SiOpenai },
+      { name: "Hugging Face", icon: SiHuggingface },
+      
     ],
   },
   {
     category: "Database & Tools",
-    skills: ["MySQL", "Oracle SQL", "Firebase", "Git", "Docker"],
+    skills: [
+      { name: "MySQL", icon: SiMysql },
+      { name: "Oracle SQL", icon: LuDatabase },
+      { name: "Firebase", icon: SiFirebase },
+      { name: "Git", icon: SiGit },
+      // { name: "Docker", icon: SiDocker },
+    ],
   },
   {
     category: "Cloud & Deployment",
-    skills: ["AWS", "Azure", "GCP"],
+    skills: [
+      { name: "AWS", icon: LuCloud },
+      // { name: "Azure", icon: LuCloudCog },
+      // { name: "GCP", icon: SiGooglecloud },
+    ],
   },
 ];
 
@@ -54,9 +113,16 @@ const Skills = () => {
             <h3>{group.category}</h3>
 
             <div className="skill-list">
-              {group.skills.map((skill, i) => (
-                <span key={i}>{skill}</span>
-              ))}
+              {group.skills.map((skill) => {
+                const Icon = skill.icon;
+
+                return (
+                  <span key={skill.name} className="skill-chip">
+                    <Icon className="skill-icon" aria-hidden="true" />
+                    {skill.name}
+                  </span>
+                );
+              })}
             </div>
           </div>
         ))}

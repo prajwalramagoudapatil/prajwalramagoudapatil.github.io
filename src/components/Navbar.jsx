@@ -49,6 +49,7 @@ const styles = {
     background: "transparent",
     color: "var(--text)",
     font: "inherit",
+    fontFamily: "var(--mono)",
     padding: "10px 14px",
     borderRadius: "999px",
     cursor: "pointer",
@@ -202,7 +203,7 @@ function Navbar({ theme, onToggleTheme }) {
             scrollToSection("home");
           }}
         >
-          &lt; Prajwal Patil &gt;
+          &lt;Prajwal Patil&gt;
         </a>
 
         {isMobile ? (

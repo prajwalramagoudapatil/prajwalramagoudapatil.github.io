@@ -14,7 +14,7 @@
 
 .skills-container {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 20px;
 }
 
@@ -42,12 +42,26 @@
   justify-content: center;
 }
 
-.skill-list span {
+.skill-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
   background: var(--tag-bg);
   color: var(--tag-text);
   padding: 6px 12px;
   margin: 5px;
   border-radius: 8px;
-  font-size: 0.8rem;
+  font-size: 0.9rem;
   font-family: var(--tech-mono);
+}
+
+.skill-icon {
+  flex-shrink: 0;
+  font-size: 1rem;
+}
+
+@media (max-width: 768px) {
+  .skills-container {
+    grid-template-columns: 1fr;
+  }
 }

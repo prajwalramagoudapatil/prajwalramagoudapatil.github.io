@@ -3,7 +3,7 @@ import Typewriter from "../Typewriter/Typewriter";
 import WaveHello from "../WaveHello/WaveHello";
 import profileImage from "../../assets/profile.jpg";
 
-const Hero = ({ onVisitTemplePage }) => {
+const Hero = () => {
   const technologies = [
     "Flutter Developer",
     "AI/ML Engineer",
@@ -31,7 +31,6 @@ const Hero = ({ onVisitTemplePage }) => {
           
           <a
             href="https://github.com/prajwalramagoudapatil"
-            // target="_blank"
             rel="noreferrer"
             className="btn primary"
           >

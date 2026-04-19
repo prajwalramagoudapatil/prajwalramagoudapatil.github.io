@@ -2,7 +2,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0px 10%;
+  padding: 40px 10%;
   min-height: 90vh;
   background: linear-gradient(135deg, var(--bg-even), var(--bg-odd));
   color: var(--text-h);
@@ -61,7 +61,7 @@
   text-decoration: none;
   font-weight: 500;
   transition: 0.3s;
-  font: inherit;
+  font-family: var(--cousine);
   font-size: 1.3rem;
   cursor: pointer;
   display: inline-flex;

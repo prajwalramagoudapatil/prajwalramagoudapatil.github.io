@@ -5,7 +5,7 @@ const Contact = () => {
       <h2 style={styles.heading}>Contact Me</h2>
 
       <div style={styles.container}>
-        <form style={styles.form}>
+        {/* <form style={styles.form}>
           <input
             type="text"
             placeholder="Your Name"
@@ -25,7 +25,7 @@ const Contact = () => {
           <button type="submit" style={styles.button}>
             Send Message
           </button>
-        </form>
+        </form> */}
 
         <div style={styles.info}>
           <h3 style={styles.infoHeading}>Get in Touch</h3>

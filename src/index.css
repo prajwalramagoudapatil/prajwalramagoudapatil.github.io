@@ -4,6 +4,7 @@
   --sans: system-ui, "Segoe UI", Roboto, sans-serif;
   --heading: var(--pt-mono);
   --nav-heading: "Major Mono Display", monospace;
+  --cousine: "Cousine", monospace;
   --mono: ui-monospace, Consolas, monospace;
   --orbitron: "Orbitron", sans-serif;
   --rationale: "Rationale", sans-serif;
@@ -135,7 +136,7 @@ h2 {
 
 p {
   margin: 0;
-  font-family: var(--rationale);
+  font-family: var(--cousine);
 }
 
 code,

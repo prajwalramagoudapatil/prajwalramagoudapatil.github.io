@@ -21,12 +21,13 @@
 .footer-copy h2 {
   /* margin: 0 0 12px; */
   font-size: 2rem;
+  font-family: var(--tech-mono);
 }
 
 .footer-copy p {
   color: var(--muted-text);
   max-width: 32rem;
-  font-family: var(--rationale);
+  font-family: var(--cousine);
 }
 
 .footer-eyebrow {
@@ -41,7 +42,7 @@
   display: flex;
   flex-direction: column;
   gap: 6px;
-  font-family: var(--tech-mono);
+  font-family: var(--cousine);
   text-align: left;
   margin: 0px 60px;
 }
@@ -76,11 +77,12 @@
   width: fit-content;
   padding: 10px 14px;
   border-radius: 999px;
-  background: var(--accent-bg);
-  border: 1px solid var(--accent-border);
+  /* background: var(--accent-bg); */
+  /* border: 1px solid var(--accent-border); */
   color: var(--text-h);
   text-decoration: none;
   transition: transform 0.2s ease, background-color 0.2s ease;
+  font-family: var(--tech-mono);
 }
 
 .footer-social-link:hover {
@@ -90,8 +92,8 @@
 
 .footer-social-icon {
   display: inline-flex;
-  width: 20px;
-  height: 20px;
+  width: 40px;
+  height: 40px;
 }
 
 .footer-social-icon svg {

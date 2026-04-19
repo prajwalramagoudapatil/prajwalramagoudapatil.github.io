@@ -59,7 +59,7 @@ function Footer() {
               className="footer-social-link"
             >
               <span className="footer-social-icon">{link.icon}</span>
-              <span>{link.label}</span>
+              {/* <span>{link.label}</span> */}
             </a>
           ))}
         </div>
