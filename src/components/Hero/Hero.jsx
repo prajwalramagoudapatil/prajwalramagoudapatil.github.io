@@ -28,13 +28,7 @@ const Hero = ({ onVisitTemplePage }) => {
           <a href="#projects" className="btn primary">
             View Projects
           </a>
-          <button
-            type="button"
-            className="btn secondary"
-            onClick={onVisitTemplePage}
-          >
-            Visit Temple Page
-          </button>
+          
           <a
             href="https://github.com/prajwalramagoudapatil"
             // target="_blank"

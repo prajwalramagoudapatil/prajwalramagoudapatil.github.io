@@ -36,7 +36,7 @@ const highlights = [
   },
   {
     label: "Location",
-    value: "Bastawad, taluk: Hukkeri, Belagavi, Karnataka",
+    value: "Bastawad, Taluk: Hukkeri, Belagavi, Karnataka",
   },
   {
     label: "Festival Focus",
@@ -54,11 +54,11 @@ const galleryItems = [
 const sevaItems = [
   {
     title: "Daily Pooja",
-    copy: "Replace with seva details, sponsorship amounts, and booking notes.",
+    copy: "Morning pooja at 9:00 am. Evening pooja at 8:30 pm",
   },
   {
     title: "Special Festival Seva",
-    copy: "Add festival-specific rituals, dates, and participation information.",
+    copy: "Anna Prasad on Amavasya.",
   },
   {
     title: "Visitor Guidance",
@@ -66,30 +66,24 @@ const sevaItems = [
   },
 ];
 
-function SkdevasthanaPage({ theme, onToggleTheme, onBackToPortfolio }) {
+function SkdevasthanaPage({ theme, onToggleTheme }) {
   return (
     <div className="temple-page">
       <header className="temple-header">
         <div className="temple-shell temple-header-row">
-          <button
-            type="button"
-            className="temple-link-button"
-            onClick={onBackToPortfolio}
-          >
-            Back to Portfolio
-          </button>
+          
 
           <div className="temple-header-copy">
-            {/* <p className="temple-eyebrow">Static React Page</p> */}
-            <h1>Shri Kalmeshwar Devasthana</h1>
+            <h1>Shri Kadasiddheshwar Devasthana</h1>
           </div>
 
           <button
             type="button"
             className="temple-theme-button"
             onClick={onToggleTheme}
+            aria-label={`Switch to ${theme === "dark" ? "light" : "dark"} theme`}
           >
-            {theme === "dark" ? "Light Theme" : "Dark Theme"}
+            <span aria-hidden="true">{theme === "dark" ? "☀" : "☾"}</span>
           </button>
         </div>
       </header>

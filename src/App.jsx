@@ -4,6 +4,7 @@ import Navbar from "./components/Navbar";
 import Hero from "./components/Hero/Hero";
 import About from "./components/About/About";
 import Projects from "./components/Projects/Projects";
+import Certificates from "./components/Certificates/Certificates";
 import Skills from "./components/Skills/Skills";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer/Footer";
@@ -89,6 +90,7 @@ function App() {
       <Hero onVisitTemplePage={() => navigateTo("/skdevasthana")} />
       <About />
       <Projects />
+      <Certificates />
       <Skills />
       <Contact />
       <Footer />

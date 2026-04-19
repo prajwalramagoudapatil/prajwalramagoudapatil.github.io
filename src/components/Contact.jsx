@@ -28,10 +28,10 @@ const Contact = () => {
         </form>
 
         <div style={styles.info}>
-          <h3>Get in Touch</h3>
-          <p>Email: prajwalpatil6987@gmail.com</p>
-          <p>Phone: +91 8088756029</p>
-          <p>Location: India</p>
+          <h3 style={styles.infoHeading}>Get in Touch</h3>
+          <p style={styles.p}>Email: prajwalpatil6987@gmail.com</p>
+          <p style={styles.p}>Phone: +91 8088756029</p>
+          <p style={styles.p}>Location: India</p>
         </div>
       </div>
     </section>
@@ -94,6 +94,14 @@ const styles = {
     minWidth: "250px",
     textAlign: "left",
   },
+  infoHeading: {
+    fontSize: "2rem",
+    marginBottom: "16px",
+  },
+  p: {
+    fontSize: "1.3rem",
+    marginBottom: "8px",
+  }
 };
 
 export default Contact;

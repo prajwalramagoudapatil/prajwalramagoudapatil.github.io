@@ -1,9 +1,10 @@
 .projects {
   padding: 60px 10%;
-  background-color: var(--section-bg);
+  background-color: var(--bg-odd);
   color: var(--text-h);
   text-align: center;
   transition: background-color 0.25s ease, color 0.25s ease;
+  margin: 6px 0 6px 0 ;
 }
 
 .projects h2 {
@@ -31,11 +32,13 @@
 
 .project-card h3 {
   margin-bottom: 10px;
+  font-family: var(--pt-mono);
 }
 
 .project-card p {
   font-size: 0.9rem;
   margin-bottom: 15px;
+  font-family: var(--rationale);
 }
 
 .tech-stack {
@@ -50,10 +53,12 @@
   margin: 4px;
   border-radius: 6px;
   font-size: 0.75rem;
+  font-family: var(--tech-mono);
 }
 
 .project-card a {
   color: var(--accent);
   text-decoration: none;
   font-weight: bold;
+  font-family: var(--tech-mono);
 }

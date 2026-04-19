@@ -1,9 +1,11 @@
 import { useEffect, useState } from "react";
+import { LuSun, LuMoon  } from "react-icons/lu";
 
 const navItems = [
   { label: "Home", target: "home" },
   { label: "About", target: "about" },
   { label: "Projects", target: "projects" },
+  { label: "Certificates", target: "certificates" },
   { label: "Skills", target: "skills" },
   { label: "Contact", target: "contact" },
 ];
@@ -61,6 +63,9 @@ const styles = {
     padding: "10px 14px",
     borderRadius: "999px",
     cursor: "pointer",
+    display: "inline-flex",
+    alignItems: "center",
+    gap: "8px",
     transition:
       "background-color 0.2s ease, color 0.2s ease, transform 0.2s ease",
     whiteSpace: "nowrap",
@@ -139,6 +144,7 @@ function Navbar({ theme, onToggleTheme }) {
   };
 
   const themeLabel = theme === "dark" ? "Light Theme" : "Dark Theme";
+  const themeIcon = theme === "dark" ? <LuSun size={18} /> : <LuMoon size={18} />;
 
   const handleMouseEnter = (event) => {
     event.currentTarget.style.background = "var(--accent-bg)";
@@ -173,18 +179,21 @@ function Navbar({ theme, onToggleTheme }) {
         type="button"
         style={styles.themeButton}
         onClick={onToggleTheme}
-        aria-label={`Switch to ${theme === "dark" ? "light" : "dark"} theme`}
+        aria-label={`Switch to ${themeLabel}`}
         onMouseEnter={handleMouseEnter}
         onMouseLeave={(event) => handleMouseLeave(event, "var(--text-h)")}
       >
-        {themeLabel}
+        <span aria-hidden="true" style={{ display: "inline-flex", lineHeight: 0 }}>
+          {themeIcon}
+        </span>
+       
       </button>
     </div>
   );
 
   return (
     <header style={styles.header}>
-      <nav style={styles.nav} aria-label="Primary">
+      <nav className="navbar-nav" style={styles.nav} aria-label="Primary">
         <a
           href="#home"
           style={styles.brand}
@@ -233,7 +242,14 @@ function Navbar({ theme, onToggleTheme }) {
                     onToggleTheme();
                     setIsMenuOpen(false);
                   }}
+                  aria-label={`Switch to ${themeLabel}`}
                 >
+                  <span
+                    aria-hidden="true"
+                    style={{ display: "inline-flex", lineHeight: 0, marginRight: "8px" }}
+                  >
+                    {themeIcon}
+                  </span>
                   {themeLabel}
                 </button>
               </div>

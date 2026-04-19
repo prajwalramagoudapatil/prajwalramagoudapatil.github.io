@@ -36,6 +36,10 @@
   text-align: center;
 }
 
+.temple-header-copy h1{
+  line-height: 1.01;
+}
+
 .temple-header-copy h1,
 .temple-page h2,
 .temple-page h3,
@@ -85,12 +89,22 @@
     color 0.2s ease; */
 }
 
-.temple-link-button,
-.temple-theme-button {
-  padding: 11px 16px;
+.temple-link-button {
+  /* padding: 11px 16px; */
+  
   border: 1px solid var(--border);
   background: var(--surface);
   color: var(--text-h);
+}
+
+.temple-theme-button{
+  padding: 11px  14px;
+  height: 50px;
+  width: 50px;
+  border: 1px solid var(--border);
+  background: var(--surface); 
+  color: var(--text-h);
+  font-size: 1.2em;
 }
 
 .temple-main {
@@ -203,6 +217,8 @@ padding: 8px;
 
 .temple-image-tall {
   min-height: 420px;
+  max-height: 600px;
+  min-width: 300px;
   margin-bottom: 18px;
 }
 
@@ -315,7 +331,8 @@ padding: 8px;
   height: 28px;
   border: 1px solid color-mix(in srgb, var(--bg) 42%, var(--border));
   border-radius: 999px;
-  background: radial-gradient(circle, rgba(0,0,0,1), rgba(0,0,0,0));
+  background: color-mix(in srgb, var(--bg) 76%, transparent);
+  /* background-image: radial-gradient(circle, color-mix(in srgb, var(--bg) 50%, transparent) 30%, transparent ); */
   color: var(--text-h);
   cursor: pointer;
   z-index: 2;
@@ -374,6 +391,14 @@ padding: 8px;
 
   .temple-header-copy {
     text-align: left;
+  }
+
+  .temple-theme-button {
+    position: fixed;
+    right: 16px;
+    bottom: 16px;
+    z-index: 30;
+    box-shadow: var(--shadow);
   }
 
   .temple-hero-grid,

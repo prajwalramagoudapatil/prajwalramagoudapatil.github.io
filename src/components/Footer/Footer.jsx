@@ -15,7 +15,7 @@ const socialLinks = [
   },
   {
     label: "LinkedIn",
-    href: "https://www.linkedin.com/in/your-linkedin-profile",
+    href: "https://www.linkedin.com/in/prajwal-ramagouda-patil/",
     icon: (
       <svg viewBox="0 0 24 24" aria-hidden="true">
         <path
