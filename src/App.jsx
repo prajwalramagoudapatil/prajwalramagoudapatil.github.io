@@ -9,6 +9,7 @@ import Skills from "./components/Skills/Skills";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer/Footer";
 import SkdevasthanaPage from "./pages/Skdevasthana/SkdevasthanaPage";
+import AllVachanagaluPage from "./pages/Skdevasthana/AllVachanagaluPage";
 
 const normalizePath = (pathname) => {
   const baseUrl = import.meta.env.BASE_URL || "/";
@@ -74,12 +75,23 @@ function App() {
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
+  if (currentPath === "/skdevasthana/vachanagalu") {
+    return (
+      <AllVachanagaluPage
+        theme={theme}
+        onToggleTheme={toggleTheme}
+        onBackToTemple={() => navigateTo("/skdevasthana")}
+      />
+    );
+  }
+
   if (currentPath === "/skdevasthana") {
     return (
       <SkdevasthanaPage
         theme={theme}
         onToggleTheme={toggleTheme}
         onBackToPortfolio={() => navigateTo("/")}
+        onViewAllVachanagalu={() => navigateTo("/skdevasthana/vachanagalu")}
       />
     );
   }

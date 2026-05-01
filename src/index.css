@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Major+Mono+Display&family=PT+Mono&family=Rationale&family=Share+Tech+Mono&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&family=Eczar:wght@400;500;600;700&family=Marcellus&family=Major+Mono+Display&family=PT+Mono&family=Rationale&family=Faculty+Glyphic&family=Share+Tech+Mono&display=swap");
 
 :root {
   --sans: system-ui, "Segoe UI", Roboto, sans-serif;
@@ -10,6 +10,10 @@
   --rationale: "Rationale", sans-serif;
   --tech-mono: "Share Tech Mono", monospace;
   --pt-mono: "PT Mono", monospace;
+  --temple-display: "Marcellus", serif;
+  --temple-heading: "Eczar", serif;
+  --temple-body: "Cormorant Garamond", serif;
+  --temple-faculty-glyphic: "Faculty Glyphic", sans-serif;
 
   font: 18px/145% var(--rationale);
   letter-spacing: 0.18px;

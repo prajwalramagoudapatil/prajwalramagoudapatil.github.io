@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react";
 import { LuSun, LuMoon  } from "react-icons/lu";
 
+const MOBILE_BREAKPOINT = 960;
+
 const navItems = [
   { label: "Home", target: "home" },
   { label: "About", target: "about" },
@@ -26,6 +28,7 @@ const styles = {
     gap: "12px",
     padding: "10px 20px",
     position: "relative",
+    minWidth: 0,
   },
   brand: {
     color: "var(--text-h)",
@@ -33,6 +36,12 @@ const styles = {
     fontFamily: "var(--nav-heading)",
     fontSize: "1.6rem",
     fontWeight: 600,
+    flex: "1 1 auto",
+    minWidth: 0,
+    overflow: "hidden",
+    textOverflow: "ellipsis",
+    whiteSpace: "nowrap",
+    // border: "2px solid red",
   },
   navLinks: {
     display: "flex",
@@ -111,12 +120,14 @@ const styles = {
 };
 
 function Navbar({ theme, onToggleTheme }) {
-  const [isMobile, setIsMobile] = useState(() => window.innerWidth <= 768);
+  const [isMobile, setIsMobile] = useState(
+    () => window.innerWidth <= MOBILE_BREAKPOINT
+  );
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   useEffect(() => {
     const handleResize = () => {
-      const mobile = window.innerWidth <= 768;
+      const mobile = window.innerWidth <= MOBILE_BREAKPOINT;
       setIsMobile(mobile);
 
       if (!mobile) {
@@ -134,12 +145,33 @@ function Navbar({ theme, onToggleTheme }) {
       setIsMenuOpen(false);
       return;
     }
+    if (target === "contact") {
+      console.log(`Scrolling to contact section ${target}`);
+      const footerSection = document.querySelector("footer");
+      if (footerSection) {
+        footerSection.scrollIntoView({ behavior: "smooth", block: "start" });
+      }
+      setIsMenuOpen(false);
+      return;
+    }
+
 
     const section = document.getElementById(target);
 
     if (section) {
-      section.scrollIntoView({ behavior: "smooth", block: "start" });
+      // section.scrollIntoView({ behavior: "smooth", block: "start" });
+      const y = section.getBoundingClientRect().top + window.pageYOffset - 50;
+  window.scrollTo({
+    top: y,
+    behavior: "smooth"
+  });
     }
+      //  window.scrollBy({
+      //   top: 300,
+      //   behavior: "smooth"
+      // });
+    
+   
 
     setIsMenuOpen(false);
   };
@@ -197,7 +229,12 @@ function Navbar({ theme, onToggleTheme }) {
       <nav className="navbar-nav" style={styles.nav} aria-label="Primary">
         <a
           href="#home"
-          style={styles.brand}
+          style={{
+            ...styles.brand,
+            maxWidth: isMobile ? "calc(100% - 64px)" : "none",
+            fontSize: isMobile ? "1rem" : styles.brand.fontSize,
+            letterSpacing: isMobile ? "0.04em" : undefined,
+          }}
           onClick={(event) => {
             event.preventDefault();
             scrollToSection("home");
@@ -219,7 +256,7 @@ function Navbar({ theme, onToggleTheme }) {
               onClick={() => setIsMenuOpen((open) => !open)}
             >
               <span aria-hidden="true" style={{ fontSize: "20px", lineHeight: 1 }}>
-                {isMenuOpen ? "X" : "="}
+                {isMenuOpen ? "X" : "\u2630"}
               </span>
             </button>
 
