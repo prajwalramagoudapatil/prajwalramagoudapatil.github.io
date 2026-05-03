@@ -5,14 +5,16 @@ import resumeFile from "../../assets/resume.pdf";
 const About = () => {
   return (
     <section className="about" id="about">
+      <h2 className="about-title">About Me</h2>
       <div className="about-container">
+        
           <div className="about-image-card">
             <img src={developerImage} alt="Prajwal Patil" />
           </div>
 
         <div className="about-content">
           <div className="about-content-card">
-            <h2 className="about-title">About Me</h2>
+            
 
             <div className="about-text">
               <p>

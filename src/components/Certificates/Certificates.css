@@ -75,7 +75,7 @@
   color: var(--muted-text);
   line-height: 1.7;
   margin-bottom: 18px;
-  /* text-align: left; */
+  text-align: justify;
   font-family: var(--cousine);
 }
 
@@ -116,7 +116,26 @@
     margin-bottom: 32px;
   }
 
+  .certificates-header p {
+    /* font-size: 2rem; */
+    text-align: justify;
+  }
+
   .certificates-grid {
     grid-template-columns: 1fr;
   }
+
+  .certificate-card {
+    padding: 18px 12px;
+  }
+
+  .certificate-card p {
+    color: var(--muted-text);
+    line-height: 1.7;
+    margin-bottom: 18px;
+    text-align: justify;
+    font-family: var(--cousine);
+    font-size: 0.93em;
+  }
+
 }

@@ -9,6 +9,7 @@ import ImgSlider from "./components/ImgSlider";
 import VachanaSlider from "./components/VachanaSlider";
 import Footer from "./components/Footer";
 import { featuredVachanagalu } from "./data/vachanagalu";
+import SKNavbar from "./components/SKNavbar";
 
 const imgs = [
   {
@@ -95,32 +96,15 @@ function SkdevasthanaPage({ theme, onToggleTheme, onViewAllVachanagalu }) {
 
   return (
     <div className="temple-page">
-      <header className="temple-header">
-        <div className="temple-shell temple-header-row">
-          <div className="temple-header-copy">
-            <h1>
-              <span className="temple-title-desktop">Shri Kadasiddheshwar Devasthana</span>
-              <span className="temple-title-mobile">SK Devasthana</span>
-            </h1>
-          </div>
 
-          <button
-            type="button"
-            className="temple-theme-button"
-            onClick={onToggleTheme}
-            aria-label={`Switch to ${theme === "dark" ? "light" : "dark"} theme`}
-          >
-            <span aria-hidden="true">{theme === "dark" ? "\u2600" : "\u263e"}</span>
-          </button>
-        </div>
-      </header>
-
+      <SKNavbar theme={theme} onToggleTheme={onToggleTheme}  />
+      
       <main className="temple-main">
         <section className="temple-hero">
           <div className="temple-shell temple-hero-grid">
             <div className="temple-hero-copy">
               <p className="temple-eyebrow">Sacred place for worship and community</p>
-              <h2>Welcome to a calm, devotional temple website</h2>
+              {/* <h2>Welcome to a calm, devotional temple website</h2> */}
               <p className="temple-lead">
                 This Website is intentionally <u> static and under development</u>.
                 It provides information on the temple&apos;s history, deity details,
@@ -328,7 +312,7 @@ function SkdevasthanaPage({ theme, onToggleTheme, onViewAllVachanagalu }) {
 
               <div className="temple-contact-card">
                 <p><strong>Address:</strong> Bastawad, Hukkeri, Karnataka, 591309</p>
-                <p><strong>Phone:</strong> 8088XXXX29 <a href="tel:8088756029">Call</a></p>
+                <p><strong>Phone:</strong>  <a href="tel:8088756029"> 8088XXXX29 </a></p>
                 <p><strong>Email:</strong> contact@skdevasthana.com</p>
                 <p><strong>Map Link:</strong> <a href="https://maps.app.goo.gl/GdaHsCB7tByWUyC37" target="_blank" rel="noopener noreferrer">View on Google Maps</a></p>
                 <p><strong>Office Hours:</strong> 8:30 AM - 8:30 PM</p>

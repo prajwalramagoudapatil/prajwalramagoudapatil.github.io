@@ -1,46 +1,21 @@
 import "./SkdevasthanaPage.css";
 import vachanagalu from "./data/vachanagalu";
+import SKNavbar from "./components/SKNavbar";
 
 function AllVachanagaluPage({ theme, onToggleTheme, onBackToTemple }) {
   return (
     <div className="temple-page">
-      <header className="temple-header">
-        <div className="temple-shell temple-header-row">
-          <div className="temple-header-copy temple-header-copy-left">
-            <p className="temple-eyebrow">Shri Kadasiddheshwara Swamiji</p>
-            <h1>Vachanagalu</h1>
-          </div>
-
-          <div className="temple-header-actions">
-            <button
-              type="button"
-              className="temple-link-button temple-link-button-pill"
-              onClick={onBackToTemple}
-            >
-              Back to Temple Page
-            </button>
-
-            <button
-              type="button"
-              className="temple-theme-button"
-              onClick={onToggleTheme}
-              aria-label={`Switch to ${theme === "dark" ? "light" : "dark"} theme`}
-            >
-              <span aria-hidden="true">{theme === "dark" ? "\u2600" : "\u263e"}</span>
-            </button>
-          </div>
-        </div>
-      </header>
+      <SKNavbar theme={theme} onToggleTheme={onToggleTheme} onBackToTemple={onBackToTemple} />
 
       <main className="temple-main">
         <section className="temple-section">
           <div className="temple-shell">
             <div className="temple-section-head temple-section-head-stack">
-              <div>
-                <p className="temple-section-tag">All Vachanagalu</p>
-                <h3>Thoughts shared by Shri Kadasiddheshwara Swamiji</h3>
-              </div>
-              <p>{vachanagalu.length} vachanas are currently listed on this page.</p>
+            
+                <p className="temple-section-tag">Vachanagalu :</p> &nbsp;
+                <p>Thoughts shared by Shri Kadasiddheshwara Swamiji</p>
+
+              <div>{vachanagalu.length} vachanas are currently listed on this page.</div>
             </div>
 
             <div className="all-vachana-list">
@@ -53,7 +28,7 @@ function AllVachanagaluPage({ theme, onToggleTheme, onBackToTemple }) {
                     )}
                   </div>
 
-                  <p className="all-vachana-text">{vachana.text}</p>
+                  <div className="all-vachana-text">{vachana.text}</div>
 
                   {vachana.tags.length > 0 && (
                     <div className="all-vachana-tags" aria-label="Vachana tags">

@@ -36,12 +36,12 @@ const styles = {
     fontFamily: "var(--nav-heading)",
     fontSize: "1.6rem",
     fontWeight: 600,
+    // border: "2px solid red",
     flex: "1 1 auto",
     minWidth: 0,
     overflow: "hidden",
     textOverflow: "ellipsis",
     whiteSpace: "nowrap",
-    // border: "2px solid red",
   },
   navLinks: {
     display: "flex",
@@ -232,15 +232,16 @@ function Navbar({ theme, onToggleTheme }) {
           style={{
             ...styles.brand,
             maxWidth: isMobile ? "calc(100% - 64px)" : "none",
-            fontSize: isMobile ? "1rem" : styles.brand.fontSize,
-            letterSpacing: isMobile ? "0.04em" : undefined,
+            fontSize: isMobile ? "1.33rem" : styles.brand.fontSize,
+            // letterSpacing: isMobile ? "0.04em" : undefined,
+            textAlign: isMobile ? "left" : "initial",
           }}
           onClick={(event) => {
             event.preventDefault();
             scrollToSection("home");
           }}
         >
-          &lt;Prajwal Patil&gt;
+          &lt;Prajwal Patil &#47;&gt;
         </a>
 
         {isMobile ? (

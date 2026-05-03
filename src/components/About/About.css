@@ -1,5 +1,6 @@
 .about {
   display: flex;
+  flex-direction: column;
   align-items: center;
   padding: 60px 20px;
   min-height: 90vh;
@@ -74,12 +75,14 @@
   color: var(--muted-text);
   text-align: justify;
   font-family: var(--mono);
+  font-size: 1.2em;
 }
 
 .about-info {
   display: grid;
   gap: 10px;
   margin: 28px 0;
+  font-size: 1.18em;
 }
 
 .about-info-item {
@@ -120,9 +123,9 @@
   }
 
   .about-content-card {
-    padding: 28px 22px;
+    padding: 28px 0px;
     text-align: center;
-    border: 10px solid blue;
+    /* border: 10px solid blue; */
   }
 
   .about-title {
@@ -135,11 +138,21 @@
   }
 
   .about-text p {
-    text-align: center;
+    text-align: justify;
+    font-size: 0.96em;
   }
 
   .about-info {
-    justify-items: center;
+    justify-items: left;
+    font-size: 1.2em;
+    text-align: left;
+
+  }
+
+  .about-info-item {
+    /* justify-content: center; */
+    line-height: 1.2em;
+    padding: 4px;
   }
 
   .about-image-card img {

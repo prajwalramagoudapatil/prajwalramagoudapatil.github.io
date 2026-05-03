@@ -62,3 +62,24 @@
   font-weight: bold;
   font-family: var(--tech-mono);
 }
+
+@media (max-width: 768px) {
+  .projects {
+    padding: 50px 20px;
+    /* margin: 6px 0 6px 0 ; */
+  }
+
+  .projects-container {
+    /* border: 2px solid green; */
+    margin: 0;
+  }
+
+  .project-card h3 {
+    text-decoration:dotted underline;
+    text-underline-offset: 4px;
+  }
+
+  .project-card p {
+    text-align: justify;
+  }
+}

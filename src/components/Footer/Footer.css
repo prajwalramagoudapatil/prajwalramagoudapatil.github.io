@@ -1,7 +1,7 @@
 .footer {
   padding: 20px 3%;
   background:
-    radial-gradient(circle at top left, var(--accent-bg), transparent 35%),
+    radial-gradient(circle at top left, var(--accent-bg) 30%, transparent ),
     var(--surface);
   border-top: 1px solid var(--border);
   color: var(--text-h);
