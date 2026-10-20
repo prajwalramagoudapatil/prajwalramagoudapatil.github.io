@@ -2,6 +2,43 @@ import React from "react";
 import "./Projects.css";
 
 const projectsData = [
+
+  {
+    title: "AI Agent CRM for HCP Interactions",
+    description:
+      "Built an AI-powered CRM system for pharmaceutical sales representatives to log, summarize, and manage HCP interactions using LangGraph agents. The application extracts structured information from natural language, generates summaries with Groq LLMs, resolves HCP records, and stores interactions in PostgreSQL through a FastAPI backend.",
+    tech: [
+      "Python",
+      "FastAPI",
+      "LangGraph",
+      "Groq",
+      "PostgreSQL",
+      "React",
+      "Redux",
+      "Tailwind CSS"
+    ],
+    github: "https://github.com/prajwalramagoudapatil/ai-agent-crm-hcp",
+    // image: "/projects/crm-hcp.png",
+    // video: "/projects/crm-hcp.mp4",
+    demo: "https://youtu.be/23kgjpcb71U?si=IiHjmWCUBhSstC3x",
+  },
+  {
+    title: "LLM Fine-Tuning with LoRA",
+    description:
+      "Fine-tuned an open-source Large Language Model using LoRA and Hugging Face PEFT in Google Colab. Prepared datasets, configured training with Transformers, evaluated model performance, and demonstrated efficient parameter-efficient fine-tuning for domain-specific tasks.",
+    tech: [
+      "Python",
+      "PyTorch",
+      "Hugging Face",
+      "Transformers",
+      "PEFT",
+      "LoRA",
+      "Google Colab"
+    ],
+    github: "https://colab.research.google.com/drive/1fGVba6kd19y5ZUGU6y7bUYO1XYuznJeP?usp=sharing",
+    // image: "/projects/lora-finetuning.png",
+    // video: "/projects/lora-finetuning.mp4",
+  },
   {
     title: "Haryana Gaushala RAG System",
     description:
@@ -62,9 +99,18 @@ const Projects = () => {
               ))}
             </div>
 
-            <a href={project.github} target="_blank" rel="noreferrer">
-              View Code →
-            </a>
+            <div className="project-links">
+              <a href={project.github} target="_blank" rel="noreferrer">
+                GitHub
+              </a>
+
+              {project.demo && (
+                <a href={project.demo} target="_blank" rel="noreferrer">
+                  Live Demo
+                </a>
+              )}
+            </div>
+
           </div>
         ))}
       </div>

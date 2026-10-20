@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://prajwalramagoudapatil.github.io/sitemap.xml

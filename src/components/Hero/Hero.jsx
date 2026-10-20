@@ -1,7 +1,7 @@
 import "./Hero.css";
 import Typewriter from "../Typewriter/Typewriter";
 import WaveHello from "../WaveHello/WaveHello";
-import profileImage from "../../assets/profile.jpg";
+import profileImage from "../../assets/Prajwal-photo.jpg";
 
 const Hero = () => {
   const technologies = [

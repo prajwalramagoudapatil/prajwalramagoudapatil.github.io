@@ -965,6 +965,10 @@ padding: 8px;
     margin: 12px 0px;
   }
 
+  .temple-link-button-pill {
+    padding: 12px 18px;
+  }
+
   .temple-link-button {
     background: linear-gradient(
       60deg,
