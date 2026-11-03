@@ -47,13 +47,16 @@
     </script>
     <script>
       (function () {
-        const redirect = window.location.search.match(
-          /[?&]redirect=([^&]+)/
-        );
+        const redirect = window.location.search.match(/[?&]redirect=([^&]+)/);
 
         if (!redirect) {
-          // Keep your existing redirect logic here.
+          return;
         }
+
+        const decodedPath = decodeURIComponent(redirect[1]);
+        const nextUrl = `${window.location.origin}${decodedPath}${window.location.hash}`;
+
+        window.history.replaceState(null, "", nextUrl);
       })();
     </script>
     <script type="module" crossorigin src="/assets/index-CGQlcN-a.js"></script>
